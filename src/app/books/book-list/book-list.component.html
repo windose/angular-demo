@@ -1,0 +1,7 @@
+<table>
+<tr *ngFor="let book of books$ | async">
+    <td><a [routerLink]="['/books', book.isbn]">{{ book.title }}</a></td>
+    <td>{{ book.subtitle }}</td>
+</tr>
+</table>
+<a [routerLink]="['/books', 'new']">Create</a>

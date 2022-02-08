@@ -1,0 +1,11 @@
+<div *ngIf="book$ | async as book">
+
+<h1>{{book.title}}</h1>
+<p>{{book.subtitle}}</p>
+<p>{{book.author}}</p>
+<p>{{book.abstract}}</p>
+<p>{{book.isbn}}</p>
+
+<p><a [routerLink]="['edit']">Edit</a></p>
+
+</div>

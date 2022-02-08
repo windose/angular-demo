@@ -1,0 +1,38 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div>
+        <label>Title</label>
+        <input type="text" formControlName="title">
+        <div *ngIf="form.get('title').hasError('required')">
+            Required
+        </div>
+    </div>
+    <div>
+        <label>SubTitle</label>
+        <input type="text" formControlName="subtitle">
+    </div>
+    <div>
+        <label>Author</label>
+        <input type="text" formControlName="author">
+    </div>
+    <div>
+        <label>Pages</label>
+        <input type="number" formControlName="numPages">
+    </div>
+    <div>
+        <label>ISBN</label>
+        <input type="text" formControlName="isbn">
+    </div>
+    <div>
+        <label>Publisher</label>
+        <fieldset formGroupName="publisher">
+            <input type="text" formControlName="name">
+            <input type="text" formControlName="url">
+        </fieldset>
+    </div>
+    <div>
+        <label>Cover</label>
+        <input type="text" formControlName="cover">
+    </div>
+
+    <button type="submit" [disabled]="!form.valid">Create Book</button>
+</form>
